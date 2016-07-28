@@ -26,18 +26,10 @@ class m130524_201442_init extends Migration
             'updated_at' => Schema::TYPE_INTEGER . ' NOT NULL',
         ], $tableOptions);
         
-        $this->createTable('{{%mytable}}', [
-            'id' => Schema::TYPE_PK,
-            'domain' => Schema::TYPE_STRING . ' NOT NULL UNIQUE',
-            'first_date' => Schema::TYPE_DATE . 'NOT NULL',
-            'last_date' => Schema::TYPE_DATE . ' NOT NULL',
-            'status' => Schema::TYPE_INTEGER . ' NOT NULL',
-        ], $tableOptions);
     }
 
     public function down()
     {
         $this->dropTable('{{%user}}');
-        $this->dropTable('{{%mytable}}');
     }
 }
